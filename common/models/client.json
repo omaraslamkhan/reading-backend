@@ -1,0 +1,54 @@
+{
+  "name": "Client",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": true
+    }
+  },
+  "properties": {
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    },
+    "fcmToken": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "firstName": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "lastName": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "address": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "mobile": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
