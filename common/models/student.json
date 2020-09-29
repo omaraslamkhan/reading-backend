@@ -1,5 +1,5 @@
 {
-  "name": "Client",
+  "name": "student",
   "base": "User",
   "idInjection": true,
   "options": {
@@ -51,30 +51,22 @@
       "required": false,
       "default": ""
     },
-    "childIds": {
-      "type": "array",
-      "required": false,
-      "options": {
-        "unique": true
-      }
+    "parentId": {
+      "type": "string",
+      "required": false
+     
     },
-    "studentIds": {
-      "type": "array",
-      "required": false,
-      "options": {
-        "unique": true
-      }
+    "teacherId": {
+      "type": "string",
+      "required": false
+   
     },
     "dob": {
       "type": "string",
       "required": false,
       "default": ""
     },
-    "qualification": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
+
     "class": {
       "type": "string",
       "required": false,
@@ -90,30 +82,20 @@
       "required": false,
       "default": ""
     },
-    "institute": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
     "imageUrl": {
       "type": "string",
       "required": false,
       "default": ""
-    },
-    "cv": {
-      "type": "string",
-      "required": false,
-      "default": ""
     }
+
   },
   "validations": [],
   "relations": {
-    "Student": {
-      "type": "hasMany",
-      "model": "student",
+    "Client": {
+      "type": "belongsTo",
+      "model": "client",
       "foreignKey": "parentId"
     }
-  
   },
   "acls": [],
   "methods": {}

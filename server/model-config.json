@@ -39,5 +39,13 @@
   "Client": {
     "dataSource": "db",
     "public": true
+  },
+  "student": {
+    "dataSource": "db",
+    "public": true
+  },
+  "teacher": {
+    "dataSource": "db",
+    "public": true
   }
 }
