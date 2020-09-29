@@ -6,7 +6,7 @@
     "database": "readingdb",
     "password": "dRGouqWw6zpz",
     "name": "db",
-    "user": "",
+    "user": "admin",
     "connector": "mongodb"
   }
 }
