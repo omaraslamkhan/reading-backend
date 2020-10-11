@@ -4,9 +4,9 @@
     "port": 27017,
     "url": "",
     "database": "readingdb",
-    "password": "dRGouqWw6zpz",
-    "name": "root",
-    "user": "root",
+    "password": "",
+    "name": "",
+    "user": "",
     "connector": "mongodb"
   }
 }
