@@ -51,6 +51,17 @@
       "required": false,
       "default": ""
     },
+
+    "parentId": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "teacherId": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
     "childIds": {
       "type": "array",
       "required": false,
@@ -113,7 +124,7 @@
       "model": "student",
       "foreignKey": "parentId"
     }
-  
+
   },
   "acls": [],
   "methods": {}
