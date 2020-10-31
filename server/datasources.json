@@ -5,7 +5,7 @@
     "url": "",
     "database": "readingdb",
     "password": "",
-    "name": "",
+    "name": "db",
     "user": "",
     "connector": "mongodb"
   }

@@ -47,5 +47,9 @@
   "teacher": {
     "dataSource": "db",
     "public": true
+  },
+  "classroom": {
+    "dataSource": "db",
+    "public": true
   }
 }

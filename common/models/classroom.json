@@ -1,6 +1,6 @@
 {
-  "name": "student",
-  "base": "User",
+  "name": "classroom",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -21,82 +21,69 @@
       "required": false,
       "default": ""
     },
-    "firstName": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
-    "lastName": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
-    "email": {
+    "className": {
       "type": "string",
       "required": true,
       "default": ""
     },
-    "address": {
+    "classTimings": {
       "type": "string",
-      "required": false,
+      "required": true,
       "default": ""
     },
-    "mobile": {
+    "classDuration": {
       "type": "string",
-      "required": false,
+      "required": true,
       "default": ""
     },
-    "gender": {
+    "classSubject": {
       "type": "string",
-      "required": false,
+      "required": true,
       "default": ""
     },
-    "parentId": {
+    "location": {
       "type": "string",
-      "required": false
+      "required": true,
+      "default": ""
+    },
+    "numberOfSeats": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "days": {
+      "type": "string",
+      "required": true,
+      "default": ""
     },
     "teacherId": {
       "type": "string",
-      "required": false
-    },
-    "dob": {
-      "type": "string",
-      "required": false,
+      "required": true,
       "default": ""
     },
-    "class": {
-      "type": "string",
+
+    "studentIds": {
+      "type": "array",
       "required": false,
-      "default": ""
-    },
-    "rollNumber": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
-    "section": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
-    "imageUrl": {
-      "type": "string",
-      "required": false,
-      "default": ""
+      "options": {
+        "unique": true
+      }
     }
-  },
+  }, 
   "validations": [],
   "relations": {
-    "Client": {
-      "type": "belongsTo",
-      "model": "client",
-      "foreignKey": "parentId"
-    },
-    "ClassRoom": {
+    "Student": {
       "type": "hasMany",
-      "model": "classroom",
+      "model": "student",
+      "foreignKey": "teacherId"
+    },
+    "Teacher": {
+      "type": "hasOne",
+      "model": "teacher",
       "foreignKey": "teacherId"
     }
+
+
   },
   "acls": [],
   "methods": {}

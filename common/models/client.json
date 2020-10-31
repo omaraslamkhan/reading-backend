@@ -51,7 +51,6 @@
       "required": false,
       "default": ""
     },
-
     "parentId": {
       "type": "string",
       "required": false,
@@ -124,7 +123,6 @@
       "model": "student",
       "foreignKey": "parentId"
     }
-
   },
   "acls": [],
   "methods": {}
