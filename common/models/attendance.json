@@ -67,6 +67,13 @@
       "options": {
         "unique": true
       }
+    },
+    "parentIds": {
+      "type": "array",
+      "required": false,
+      "options": {
+        "unique": true
+      }
     }
   },
   "validations": [],
