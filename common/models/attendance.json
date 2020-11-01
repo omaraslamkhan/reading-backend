@@ -61,6 +61,11 @@
       "required": true,
       "default": ""
     },
+    "date": {
+      "type": "date",
+      "required": false,
+      "default": ""
+    },
     "studentIds": {
       "type": "array",
       "required": false,

@@ -55,5 +55,13 @@
   "attendance": {
     "dataSource": "db",
     "public": true
+  },
+  "notify": {
+    "dataSource": "db",
+    "public": true
+  },
+  "sms": {
+    "dataSource": "db",
+    "public": true
   }
 }
