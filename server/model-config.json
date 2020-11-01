@@ -51,5 +51,9 @@
   "classroom": {
     "dataSource": "db",
     "public": true
+  },
+  "attendance": {
+    "dataSource": "db",
+    "public": true
   }
 }

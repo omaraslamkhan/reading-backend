@@ -1,5 +1,5 @@
 {
-  "name": "classroom",
+  "name": "attendance",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -70,18 +70,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "Student": {
-      "type": "hasMany",
-      "model": "student",
-      "foreignKey": "teacherId"
-    },
-    "Teacher": {
-      "type": "hasOne",
-      "model": "teacher",
-      "foreignKey": "teacherId"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }
