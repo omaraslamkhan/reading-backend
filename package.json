@@ -11,6 +11,7 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
+    "@vonage/server-sdk": "^2.10.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^3.10.0",
@@ -22,7 +23,7 @@
     "loopback-ds-timestamp-mixin": "^3.4.1",
     "loopback-socket": "^0.4.2",
     "nexmo": "^2.9.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "rimraf": "^2.6.3",
     "serve-favicon": "^2.0.1",

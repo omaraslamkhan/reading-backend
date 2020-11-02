@@ -11,7 +11,24 @@
       "required": true
     }
   },
-  "properties": {},
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "isRead": {
+      "type": "boolean",
+      "default":false
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [],
