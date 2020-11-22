@@ -16,10 +16,10 @@ const vonage = new Vonage({
           userObjs.forEach((items)=>{
             if(items.mobile==null || items.mobile=='') return
             Sms.sendMessage(items.mobile,null,(err,res)=>{
-              console.log(res);
             })
-          })
 
+          })
+          cb(null,{status:200})
          })
 
     }
@@ -30,7 +30,7 @@ const vonage = new Vonage({
     Sms.sendMessage = function (receiverId, message, cb) {
 
       const from = 'Reading Readiness';
-      const to = "+923411235959";
+      const to = "923333215323";
       const text = 'Attendance testign sms'
       vonage.message.sendSms(from, to, text, (err, responseData) => {
         console.log(responseData);
