@@ -1,0 +1,41 @@
+{
+  "name": "location",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": true
+    }
+  },
+  "properties": {
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    },
+    "locationTitle": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "location": {
+      "type": "GeoPoint",
+      "required": false,
+      "default": ""
+    },
+    "adminId": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    }
+  
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
