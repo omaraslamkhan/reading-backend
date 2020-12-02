@@ -29,7 +29,12 @@
     },
     "adminId": {
       "type": "string",
-      "required": true,
+      "required": false,
+      "default": ""
+    },
+    "createdBy": {
+      "type": "string",
+      "required": false,
       "default": ""
     }
   

@@ -46,6 +46,12 @@
       "required": true,
       "default": ""
     },
+
+    "locationId": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
     "numberOfSeats": {
       "type": "string",
       "required": true,
@@ -63,6 +69,13 @@
     },
     "studentIds": {
       "type": "array",
+      "required": false,
+      "options": {
+        "unique": true
+      }
+    },
+    "adminId": {
+      "type": "string",
       "required": false,
       "options": {
         "unique": true

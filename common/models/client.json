@@ -57,6 +57,12 @@
       "required": false,
       "default": ""
     },
+
+    "locationId": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
     "teacherId": {
       "type": "string",
       "required": false,
@@ -64,7 +70,7 @@
     },
     "adminId": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": ""
     },
     "childIds": {
