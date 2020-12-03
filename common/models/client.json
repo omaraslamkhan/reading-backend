@@ -134,6 +134,11 @@
       "type": "hasMany",
       "model": "student",
       "foreignKey": "parentId"
+    },
+    "location": {
+      "type": "belongsTo",
+      "model": "location",
+      "foreignKey": "locationId"
     }
   },
   "acls": [],
