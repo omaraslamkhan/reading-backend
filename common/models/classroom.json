@@ -64,7 +64,7 @@
     },
     "teacherId": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": ""
     },
     "studentIds": {
@@ -84,14 +84,21 @@
   },
   "validations": [],
   "relations": {
+
+
+
     "Student": {
-      "type": "hasMany",
+      "type": "referencesMany",
       "model": "student",
-      "foreignKey": "teacherId"
+      "foreignKey": "studentIds",
+      "options": {
+        "validate": true
+      }
     },
+
     "Teacher": {
-      "type": "hasOne",
-      "model": "teacher",
+      "type": "belongsTo",
+      "model": "Client",
       "foreignKey": "teacherId"
     }
   },
