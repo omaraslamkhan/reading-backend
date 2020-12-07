@@ -10,10 +10,12 @@ const vonage = new Vonage({
     var app = require("../../server/server.js");
     var ObjectID = require("mongodb").ObjectID;
     Sms.SmsParent = function (userId, message, cb) {
+             
+
         var client = app.models.Client;
         client.find({where: {id: {inq:userId}}}, function(err, userObjs) {
-        
           userObjs.forEach((items)=>{
+
             if(items.mobile==null || items.mobile=='') return
             Sms.sendMessage(items.mobile,null,(err,res)=>{
             })
@@ -28,7 +30,6 @@ const vonage = new Vonage({
 
 
     Sms.sendMessage = function (receiverId, message, cb) {
-
       const from = 'Reading Readiness';
       const to = "923333215323";
       const text = 'Attendance testign sms'

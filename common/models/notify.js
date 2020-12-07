@@ -16,12 +16,12 @@ module.exports = function(Notify) {
 
 
     Notify.NotifyParent = function (userIds,  message, cb) {
-      console.log(userIds)
+      console.log('userIds',userIds)
          
       var client = app.models.Client;
         client.find({where: {id: {inq:userIds}}}, function(err, userObjs) {
           userObjs.forEach((items) => {
-
+            console.log(items);
             Notify.create({
               userId: items.id,
               message:"temporary",
@@ -55,7 +55,7 @@ var notify = (notificationUsers) => {
     Sender: "id=" + fcmConstants.senderId,
   };
   var requestData = {
-    registration_ids: ["eHUkXz2U_IY:APA91bH8EwW_ir4iZhP4frYT7-x3wux0q8I-LcW9w7f1ZQ_-dSuynQp_xI3jchfE5uN-ZLyjTmozEzyVHPF3I-okoqtlcCz4J-MR2OSIMfVq9GYNALtn3cWHaEEipglfxezdY9iL0vBQ"],
+    registration_ids:notificationUsers,
     priority: "high",
     content_available: true,
     notification: {
