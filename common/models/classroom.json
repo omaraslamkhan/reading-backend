@@ -67,6 +67,12 @@
       "required": false,
       "default": ""
     },
+    
+    "classFees": {
+      "type": "number",
+      "required": true,
+      "default": ""
+    },
     "studentIds": {
       "type": "array",
       "required": false,

@@ -21,6 +21,11 @@
       "required": false,
       "default": ""
     },
+    "classRoomId": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
     "className": {
       "type": "string",
       "required": true,
@@ -57,6 +62,11 @@
       "default": ""
     },
     "teacherId": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "adminId": {
       "type": "string",
       "required": true,
       "default": ""
