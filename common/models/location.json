@@ -27,10 +27,12 @@
       "required": false,
       "default": ""
     },
-    "adminId": {
-      "type": "string",
+    "adminIds": {
+      "type": "array",
       "required": false,
-      "default": ""
+      "options": {
+        "unique": true
+      }
     },
     "createdBy": {
       "type": "string",
