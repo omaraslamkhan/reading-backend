@@ -68,7 +68,7 @@
     },
     "adminId": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": ""
     },
     "date": {
@@ -77,7 +77,7 @@
       "default": ""
     },
     "studentIds": {
-      "type": "array",
+      "type": ["object"],
       "required": false,
       "options": {
         "unique": true

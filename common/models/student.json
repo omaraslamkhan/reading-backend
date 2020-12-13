@@ -69,6 +69,16 @@
       "required": false,
       "default": ""
     },
+    "presents": {
+      "type": "number",
+      "required": false,
+      "default": 0
+    },
+    "absents": {
+      "type": "number",
+      "required": false,
+      "default": 0
+    },
     "class": {
       "type": "string",
       "required": false,
