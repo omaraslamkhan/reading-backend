@@ -11,16 +11,40 @@ const vonage = new Vonage({
     var ObjectID = require("mongodb").ObjectID;
     Sms.SmsParent = function (userId, message, cb) {
              
-
-        var client = app.models.Client;
-        client.find({where: {id: {inq:userId}}}, function(err, userObjs) {
+        var smsObject=[];
+        var parentIds=[];
+        var students = app.models.student;
+        var clients = app.models.Client;
+        students.find({where: {id: {inq:userId}}}, function(err, userObjs) {
           userObjs.forEach((items)=>{
-
-            if(items.mobile==null || items.mobile=='') return
-            Sms.sendMessage(items.mobile,null,(err,res)=>{
-            })
+              
+              parentIds.push(items.parentId);
+              smsObject.push({mobile:'',message:`${items.firstName}${items.lastName} is ${message}`});
+          
 
           })
+          clients.find({where: {id: {inq:parentIds}}}, function(err, userObjs) {
+                   userObjs.forEach((x,i)=>{
+             smsObject[i].mobile=x.mobile;
+            })
+            for(var i=0;i<smsObject.length;i++){
+               Sms.sendMessage(smsObject[i].mobile,smsObject[i].message,(err,res)=>{
+                    console.log('sms',res);
+                  })
+            
+            }
+               
+          });
+
+
+          // smsObject.forEach((x)=>{
+
+          //   // Sms.sendMessage(x.mobile,x.message,(err,res)=>{
+          //   //   console.log('sms',res);
+          //   // })
+          // })
+           
+
           cb(null,{status:200})
          })
 
@@ -29,10 +53,10 @@ const vonage = new Vonage({
 
 
 
-    Sms.sendMessage = function (receiverId, message, cb) {
+    Sms.sendMessage = function (receiverId, messageSend, cb) {
       const from = 'Reading Readiness';
       const to = "923333215323";
-      const text = 'Attendance testign sms'
+      const text = messageSend
       vonage.message.sendSms(from, to, text, (err, responseData) => {
         console.log(responseData);
         if (err) {
