@@ -1,0 +1,47 @@
+{
+  "name": "transaction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": true
+    }
+  },
+  "properties": {
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "isVerified": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "transactionCode": {
+      "type": "number",
+      "required": true
+    },
+    "parentId": {
+      "type": "string",
+      "required": true
+    },
+    "adminId": {
+      "type": "string",
+      "required": true
+    }
+
+  },
+  "validations": [],
+  "relations": {
+    "Parent": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": "parentId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

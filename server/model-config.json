@@ -67,5 +67,9 @@
   "location": {
     "dataSource": "db",
     "public": true
+  },
+  "transaction": {
+    "dataSource": "db",
+    "public": true
   }
 }

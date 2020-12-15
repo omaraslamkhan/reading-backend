@@ -46,7 +46,6 @@
       "required": true,
       "default": ""
     },
-
     "locationId": {
       "type": "string",
       "required": true,
@@ -67,7 +66,6 @@
       "required": false,
       "default": ""
     },
-
     "classFees": {
       "type": "number",
       "required": true,
@@ -90,18 +88,15 @@
   },
   "validations": [],
   "relations": {
-
-
-
     "Student": {
       "type": "referencesMany",
       "model": "student",
       "foreignKey": "studentIds",
       "options": {
-        "validate": true
+        "validate": true,
+        "forceId": false
       }
     },
-
     "Teacher": {
       "type": "belongsTo",
       "model": "Client",

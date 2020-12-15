@@ -39,12 +39,9 @@
       "required": false,
       "default": ""
     }
-  
   },
   "validations": [],
-  "relations": {
-
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }
