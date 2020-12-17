@@ -3,6 +3,20 @@
 module.exports = function(Classroom) {
 
 
+    Classroom.findClassData = function (studentIds, cb) {
+        
+        Classroom.find({where:  {studentIds: {inq:studentIds}}},function(err, res) {
+            
+            if (err) {
+                    cb(err, null);
+                    return;
+                }
+                cb(null, {response:res,count: res.length});
+            })
+        
+      };
+
+
 
 
     Classroom.updateTeacherId = function (teacherId,Classid, cb) {
@@ -99,6 +113,13 @@ cb(null)
 
 
 
+
+      Classroom.remoteMethod('findClassData', {
+        accepts: [{arg: 'studentIds', type: 'array'}],
+        returns: {arg: 'result', type: 'string'}
+      });
+    
+      
 
       Classroom.remoteMethod('updateClass', {
         accepts: [{arg: 'studentIds', type: 'array'}, {arg: 'id', type: 'string'}],
