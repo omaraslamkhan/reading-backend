@@ -2,6 +2,11 @@
 
 module.exports = function(Client) {
   const app = require("../../server/server");
+  var emailService = require("./email");
+  Client.SendEmail = function (email, message, cb) {
+    emailService.sendEmail(email, message);
+    cb(null,'200');
+  };
 
   Client.observe('after save', function(ctx, next) {
     if (ctx.instance) {
@@ -57,6 +62,13 @@ module.exports = function(Client) {
 
 
 
+  Client.remoteMethod("SendEmail", {
+    accepts: [
+      {arg: "email", type: "string"},
+      {arg: "message", type: "string"},
+    ],
+    returns: {arg: "result", type: "string"},
+  });
 
 
 

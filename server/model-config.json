@@ -40,6 +40,9 @@
     "dataSource": "db",
     "public": true
   },
+  "Email": {
+    "dataSource": "Email"
+  },
   "student": {
     "dataSource": "db",
     "public": true

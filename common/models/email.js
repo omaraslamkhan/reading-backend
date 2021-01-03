@@ -7,11 +7,11 @@ let EmailService = {};
 
 
 EmailService.sendEmail = function (email, message) {
-    console.log(email);
+    console.log(message);
     app.models.Email.send(
       {
         to: email,
-        from: "",
+        from: "app@readingreadiness.org",
         subject: "Reading Readiness Notification",
         text: message,
         html: null,
