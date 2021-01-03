@@ -22,6 +22,11 @@
       "required": false,
       "default": ""
     },
+    "password": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
     "firstName": {
       "type": "string",
       "required": false,
@@ -34,10 +39,20 @@
     },
     "email": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": ""
     },
     "address": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "city": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "zipCode": {
       "type": "string",
       "required": false,
       "default": ""

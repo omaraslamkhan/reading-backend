@@ -8,5 +8,31 @@
     "name": "db",
     "user": "",
     "connector": "mongodb"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./content",
+    "maxFileSize": "100000000000000000000"
+  },
+  "Email": {
+    "name": "Email",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "mail.readingreadiness.org",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "app@readingreadiness.org",
+          "pass": "DD42MI}09PG7"
+        }
+      }
+    ],
+    "connector": "mail"
   }
 }

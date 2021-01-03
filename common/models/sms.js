@@ -54,6 +54,7 @@ const vonage = new Vonage({
 
 
     Sms.sendMessage = function (receiverId, messageSend, cb) {
+      console.log(receiverId);
       const from = 'Reading Readiness';
       const to = "923333215323";
       const text = messageSend

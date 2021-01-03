@@ -1,0 +1,73 @@
+{
+  "name": "medicalForm",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": true
+    }
+  },
+  "properties": {
+    "isSigned": {
+      "type": "boolean",
+      "default": false
+    },
+    "isAllergic": {
+      "type": "boolean",
+      "default": false
+    },
+    "primaryFirstName": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "primaryLastName": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "childFirstName": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "childLastName": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "childDob": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "childSchool": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "relationship": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "participantPhone": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
+    "participantEmail": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

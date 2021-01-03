@@ -1,0 +1,27 @@
+const app = require("../../server/server");
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+let EmailService = {};
+
+
+
+EmailService.sendEmail = function (email, message) {
+    console.log(email);
+    app.models.Email.send(
+      {
+        to: email,
+        from: "",
+        subject: "Reading Readiness Notification",
+        text: message,
+        html: null,
+      },
+      function (err, mail) {
+        console.log(err);
+        console.log("mail is ", JSON.stringify(mail));
+        cb(err);
+      }
+    );
+  };
+
+module.exports = EmailService;

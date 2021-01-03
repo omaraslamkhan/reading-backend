@@ -31,9 +31,14 @@
       "required": true,
       "default": ""
     },
-    "classDuration": {
+    "classEndTimings": {
       "type": "string",
       "required": true,
+      "default": ""
+    },
+    "classDuration": {
+      "type": "string",
+      "required": false,
       "default": ""
     },
     "classSubject": {
