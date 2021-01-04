@@ -33,7 +33,9 @@ module.exports = function(Location) {
       };
 
       Location.FindAdminLocation = function (cb) {
-            Location.find({adminIds:{$exists: true}, $where:'this.adminIds.length>1'}, function(err, updateRes) {
+    
+        // Location.find({adminIds:{$exists: true}}, function(err, updateRes) {
+            Location.find({where:  {isActive:true},$and:{adminIds:{$exists: true}}}, function(err, updateRes) {
                 if (err) {
                     cb(err, null);
                     return;

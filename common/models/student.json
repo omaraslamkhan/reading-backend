@@ -52,6 +52,11 @@
       "required": false,
       "default": ""
     },
+    "state": {
+      "type": "string",
+      "required": false,
+      "default": ""
+    },
     "zipCode": {
       "type": "string",
       "required": false,
