@@ -1,7 +1,48 @@
 'use strict';
 
 module.exports = function(Location) {
+  var app = require("../../server/server.js");
 
+
+  Location.locationWiseStudents = function (locId, cb) {
+    var client = app.models.Client;
+    var student = app.models.Student;
+    var adminIds=[];
+    client.find({where:{locationId:locId,role:'ADMIN'}},(err,result)=>{
+
+      result.forEach(element => {
+      adminIds.push(element.id);
+      });
+      student.find({ include:'parent', where: { and:[{adminId: { inq: adminIds}},{isActive:true}] }}).then((std)=>{
+               cb(null,std)
+      })
+
+    })
+
+    // app.models.Student.getDataSource().connector.connect(function(err, db) {
+    //   var collection = db.collection('student');
+    //      collection.aggregate([
+
+
+          
+    //        {
+    //          $match: {isActive:true} , 
+      
+    //        }
+        
+        
+        
+    //     ]).toArray(function(err,servicesData){
+    //            if(err){
+ 
+    //             }else{
+    //           cb(null,servicesData);
+    //         }
+ 
+    //       });
+    //  });
+ 
+  };
 
     Location.UpdateLocation = function (location,id, cb) {
         // Location.find({id}, function(er, data) {
@@ -52,6 +93,12 @@ module.exports = function(Location) {
       };
 
 
+      
+    Location.remoteMethod("locationWiseStudents", {
+      accepts: [{ arg: "locationId", type: "string" }],
+      returns: { arg: "result", type: "string" },
+      http: {verb: "get"}
+    });
 
     Location.remoteMethod("UpdateLocation", {
     accepts: [{ arg: "location", type: "string" },{ arg: "id", type: "string" }],
