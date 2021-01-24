@@ -30,7 +30,15 @@
     },
     "adminId": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "enum": [
+        "parent",
+        "student"
+          ]
     }
   },
   "validations": [],
