@@ -38,7 +38,7 @@
     },
     "classDuration": {
       "type": "string",
-      "required": true,
+      "required": false,
       "default": ""
     },
     "classSubject": {
