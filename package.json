@@ -11,6 +11,7 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
     "@vonage/server-sdk": "^2.10.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",

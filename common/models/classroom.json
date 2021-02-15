@@ -102,6 +102,7 @@
         "forceId": false
       }
     },
+
     "Teacher": {
       "type": "belongsTo",
       "model": "Client",

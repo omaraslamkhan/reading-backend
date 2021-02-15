@@ -50,6 +50,58 @@ module.exports = function (Classroom) {
     });
   };
 
+
+  Classroom.rosterData = function (classRoomId, cb) {
+    Classroom.getDataSource().connector.connect(function (err, db) {
+      var collection = db.collection("classroom");
+      var ObjectID = Classroom.getDataSource().ObjectID;
+      var obj=[];
+      collection
+        .aggregate([
+          { $match: { _id: ObjectID(classRoomId),isActive:true } },
+          {
+            $lookup: {
+              from: "student",
+              localField: "studentIds",
+              foreignField: "_id",
+              as: "Student",
+            },
+          },
+          
+          {
+            $unwind: "$Student",
+          },
+          
+          {
+            $lookup: {
+              from: "Client",
+              localField: "Student.parentId",
+              foreignField: "_id",
+              as: "Parent",
+            },
+          },
+          {
+            $unwind: "$Parent",
+          },
+          //  {
+          //   $group: { _id:{Student:'$Student',Parent:'$Parent'} }
+          // },
+          // { $project : { Student : '$Student' , Parent : '$Parent' } } ,
+          
+       
+        ])
+        .toArray(function (err, servicesData) {
+          if (err) {
+            console.log(servicesData);
+          } else {
+           
+           
+            cb(null, servicesData);
+          }
+        });
+    });
+  };
+
   Classroom.findClassData = function (studentIds, cb) {
     Classroom.find(
       { where: { studentIds: { inq: studentIds } } },
@@ -147,6 +199,12 @@ module.exports = function (Classroom) {
     //     cb(null, {success: 1});
     // })
   };
+
+
+  Classroom.remoteMethod("rosterData", {
+    accepts: [{ arg: "classRoomId", type: "string" }],
+    returns: { arg: "result", type: "string" },
+  });
 
   Classroom.remoteMethod("findTeacherStudent", {
     accepts: [{ arg: "teacherId", type: "string" }],
