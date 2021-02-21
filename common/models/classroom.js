@@ -68,9 +68,9 @@ module.exports = function (Classroom) {
             },
           },
           
-          {
-            $unwind: "$Student",
-          },
+          // {
+          //   $unwind: "$Student",
+          // },
           
           {
             $lookup: {
@@ -80,9 +80,9 @@ module.exports = function (Classroom) {
               as: "Parent",
             },
           },
-          {
-            $unwind: "$Parent",
-          },
+          // {
+          //   $unwind: "$Parent",
+          // },
           //  {
           //   $group: { _id:{Student:'$Student',Parent:'$Parent'} }
           // },
@@ -92,9 +92,9 @@ module.exports = function (Classroom) {
         ])
         .toArray(function (err, servicesData) {
           if (err) {
-            console.log(servicesData);
           } else {
            
+            console.log('servicesData',servicesData);
            
             cb(null, servicesData);
           }
@@ -203,7 +203,7 @@ module.exports = function (Classroom) {
 
   Classroom.remoteMethod("rosterData", {
     accepts: [{ arg: "classRoomId", type: "string" }],
-    returns: { arg: "result", type: "string" },
+    returns: { arg: "result", type: "array" },
   });
 
   Classroom.remoteMethod("findTeacherStudent", {
