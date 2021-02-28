@@ -68,9 +68,9 @@ module.exports = function (Classroom) {
             },
           },
           
-          // {
-          //   $unwind: "$Student",
-          // },
+          {
+            $unwind: "$Student",
+          },
           
           {
             $lookup: {
@@ -80,13 +80,13 @@ module.exports = function (Classroom) {
               as: "Parent",
             },
           },
-          // {
-          //   $unwind: "$Parent",
-          // },
+          {
+            $unwind: "$Parent",
+          },
           //  {
           //   $group: { _id:{Student:'$Student',Parent:'$Parent'} }
           // },
-          // { $project : { Student : '$Student' , Parent : '$Parent' } } ,
+          { $project : { Student : '$Student' , Parent : '$Parent' } } ,
           
        
         ])

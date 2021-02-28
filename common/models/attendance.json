@@ -86,8 +86,12 @@
       }
     }
   },
-  "validations": [],
-  "relations": {},
+  "validations": [
+    
+  ],
+  "relations": {
+    
+  },
   "acls": [],
   "methods": {}
 }
