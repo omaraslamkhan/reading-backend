@@ -16,11 +16,7 @@
       "required": false,
       "default": true
     },
-    "fcmToken": {
-      "type": "string",
-      "required": false,
-      "default": ""
-    },
+  
     "className": {
       "type": "string",
       "required": true,
@@ -38,6 +34,17 @@
     },
     "classDuration": {
       "type": "string",
+      "required": false,
+      "default": ""
+    },
+
+    "classStartDate": {
+      "type": "date",
+      "required": false,
+      "default": ""
+    },
+    "classEndDate": {
+      "type": "date",
       "required": false,
       "default": ""
     },
@@ -60,6 +67,17 @@
       "type": "string",
       "required": true,
       "default": ""
+    },
+    "skipDates": {
+      "type": [
+        
+        {
+          "skip":"date",
+          "isActive":false
+        }
+      ],
+      "required": false,
+      "default": []
     },
     "days": {
       "type": "string",
