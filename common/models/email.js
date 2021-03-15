@@ -19,7 +19,7 @@ EmailService.sendEmail = function (email, message) {
       function (err, mail) {
         console.log(err);
         console.log("mail is ", JSON.stringify(mail));
-        res.send(err);
+     
       }
       
     );
